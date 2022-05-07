@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Prueba tecnica",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelRopero/PruebaChoho.git"
+  },
+  "author": "ManuelRopero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManuelRopero/PruebaChoho/issues"
+  },
+  "homepage": "https://github.com/ManuelRopero/PruebaChoho#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
