@@ -1,0 +1,59 @@
+insert into tipo(nombre) values ("Cadenas");
+insert into tipo(nombre) values ("Bateria");
+insert into tipo(nombre) values ("Discos");
+insert into tipo(nombre) values ("Filtros");
+insert into tipo(nombre) values ("Velocimetros");
+insert into tipo(nombre) values ("Switch");
+insert into tipo(nombre) values ("Carburador");
+insert into tipo(nombre) values ("Espejos");
+insert into tipo(nombre) values ("Direccionales");
+insert into tipo(nombre) values ("Bombillos");
+
+insert into estado(nombre) values ("Pagado");
+insert into estado(nombre) values ("Sin pagar");
+
+insert into producto(name, valorUnitario, tipo_id) values ("Cadena generica",50000,1);
+insert into producto(name, valorUnitario, tipo_id) values ("Cadena premium",100000,1);
+insert into producto(name, valorUnitario, tipo_id) values ("Bateria estandar",80000,2);
+insert into producto(name, valorUnitario, tipo_id) values ("Bateria premium",120000,2);
+insert into producto(name, valorUnitario, tipo_id) values ("Disco estandar",20000,3);
+insert into producto(name, valorUnitario, tipo_id) values ("Disco premium",80000,3);
+insert into producto(name, valorUnitario, tipo_id) values ("Filtro aire",50000,4);
+insert into producto(name, valorUnitario, tipo_id) values ("Filtro aceite",70000,4);
+insert into producto(name, valorUnitario, tipo_id) values ("Velocimetro estandar",50000,5);
+insert into producto(name, valorUnitario, tipo_id) values ("Velocimetro premium",100000,5);
+insert into producto(name, valorUnitario, tipo_id) values ("Switch estandar",30000,6);
+insert into producto(name, valorUnitario, tipo_id) values ("Switch premium",50000,6);
+insert into producto(name, valorUnitario, tipo_id) values ("Carburador estandar",100000,7);
+insert into producto(name, valorUnitario, tipo_id) values ("Carburador premium",190000,7);
+insert into producto(name, valorUnitario, tipo_id) values ("Espejos estandar",20000,8);
+insert into producto(name, valorUnitario, tipo_id) values ("Espejos premium",60000,8);
+insert into producto(name, valorUnitario, tipo_id) values ("Direccionlaes estandar",90000,9);
+insert into producto(name, valorUnitario, tipo_id) values ("Direccionales premium",120000,9);
+insert into producto(name, valorUnitario, tipo_id) values ("Bombillo estandar",80000,10);
+insert into producto(name, valorUnitario, tipo_id) values ("Bombillo premium",120000,10);
+
+insert into asesor(codigoAsesor, name) values ("C001","Juan");
+insert into asesor(codigoAsesor, name) values ("C002","Camila");
+
+insert into cliente(  name, asesor_id) values ("Pedro",1);
+insert into cliente(  name, asesor_id) values ("Anna",1);
+insert into cliente(  name, asesor_id) values ("Raul",2);
+insert into cliente(  name, asesor_id) values ("Juana",2);
+
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-01-20",5,1,2);
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-01-21",4,1,2);
+insert into pedido_producto(  pedido_id,producto_id ) values (1,3);
+insert into pedido_producto(  pedido_id,producto_id ) values (2,1);
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-02-20",1,2,2);
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-02-21",3,2,1);
+insert into pedido_producto(  pedido_id,producto_id ) values (3,20);
+insert into pedido_producto(  pedido_id,producto_id ) values (4,15);
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-02-20",6,3,1);
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-02-21",1,3,1);
+insert into pedido_producto(  pedido_id,producto_id ) values (5,11);
+insert into pedido_producto(  pedido_id,producto_id ) values (6,8);
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-02-20",6,4,2);
+insert into pedido(  fechaPago, cantidad, cliente_id, estado_id ) values ("2021-02-21",1,4,1);
+insert into pedido_producto(  pedido_id,producto_id ) values (7,14);
+insert into pedido_producto(  pedido_id,producto_id ) values (8,4);

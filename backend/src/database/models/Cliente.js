@@ -13,4 +13,22 @@ module.exports = (Sequelize, dataTypes) => {
             type: dataTypes.BIGINT(10)
         }
     }
+    let config = {
+        FOREIGN_KEY_CHECKS: 0,
+        timestamps: false,
+        deletedAt: false,        
+    }
+    const Cliente = Sequelize.define(alias,cols,config);
+
+    Cliente.associate = function(models){
+        Clientes.belongsTo(models.Asesor,{
+            as: "Asesor",
+            foreingkey:"asesor_id"
+        })
+        Clientes.hasMany(models.Pedido,{
+            as: "Pedido",
+            foreingkey:"cliente_id"
+        })
+    }
+    return User;
 }
