@@ -21,14 +21,14 @@ module.exports = (Sequelize, dataTypes) => {
     const Cliente = Sequelize.define(alias,cols,config);
 
     Cliente.associate = function(models){
-        Clientes.belongsTo(models.Asesor,{
+        /*Cliente.belongsTo(models.Asesor,{
             as: "Asesor",
             foreingkey:"asesor_id"
-        })
-        Clientes.hasMany(models.Pedido,{
+        })*//*
+        Cliente.hasMany(models.Pedido,{
             as: "Pedido",
             foreingkey:"cliente_id"
-        })
+        })*/
     }
-    return User;
+    return Cliente;
 }

@@ -8,7 +8,7 @@ module.exports = (Sequelize, dataTypes) => {
             autoIncrement: true
         },
         fechaPago: {
-            type: dataTypes.DATETIME
+            type: dataTypes.DATE
         },
         cantidad: {
             type: dataTypes.BIGINT(10)
@@ -31,15 +31,15 @@ module.exports = (Sequelize, dataTypes) => {
             as:"Pedido_Producto",
             foreignKey: "pedido_id"
         })
-        Pedido.belongsTo(models.Cliente,{
+        /*Pedido.belongsTo(models.Cliente,{
             as: "Cliente",
             foreingkey:"cliente_id"
-        })
+        })*//*
         Pedido.belongsTo(models.Estado,{
             as: "Estado",
             foreingkey:"estado_id"
         })
-
+        */
     }
     return Pedido;
 }

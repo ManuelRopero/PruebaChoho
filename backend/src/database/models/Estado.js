@@ -16,10 +16,11 @@ module.exports = (Sequelize, dataTypes) => {
         deletedAt: false,      
     }
     const Estado = Sequelize.define(alias,cols,config);
-    Estado.associate = function(models){
+    Estado.associate = function(models){/*
         Estado.hasMany(models.Pedido,{
             as: "Pedido",
             foreingkey:"estado_id"
-        })
+        })*/
     }
+    return Estado;
 }

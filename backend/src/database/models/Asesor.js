@@ -19,11 +19,11 @@ module.exports = (Sequelize, dataTypes) => {
         deletedAt: false,      
     }
     const Asesor = Sequelize.define(alias,cols,config);
-    Asesor.associate = function(modesl){
-        Asesor.hasMany(models.Cliente,{
+    Asesor.associate = function(models){
+        /*Asesor.hasMany(models.Cliente,{
             as: "Cliente",
             foreignKey: "asesor_id"
-        })
+        })*/
     }
     return Asesor;
 }
