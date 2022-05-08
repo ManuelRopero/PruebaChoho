@@ -4,6 +4,7 @@ const asesor = db.Asesor;
 const cliente = db.Cliente;
 const products = db.Producto;
 const pedidos = db.Pedido;
+const pedidoProducto = db.Pedido_Producto;
 const asesorController = {
     getAllasesors: async (req,res) => {
         const allAsesor = await asesor.findAll();
@@ -59,6 +60,28 @@ const asesorController = {
         }
         return cont;
     },
+    getDetailProducto : async (pedidoId,userId) => {
+        const pedidosProductos = await pedidoProducto.findAll();
+        //const allProducts = await products.findAll();
+        let productoId = 0;
+        for (let i = 0; i < pedidosProductos.length; i++) {
+            if (pedidosProductos[i].pedido_id == pedidoId) {
+                productoId = pedidosProductos[i].producto_id;
+            }
+        }
+        const pedido = await pedidos.findByPk(pedidoId);
+        const producInfo = await products.findByPk(productoId);
+        const proudctJson = {
+            idProduct : producInfo.id,
+            nameProduct : producInfo.name,
+            tipoProduct : producInfo.tipo_id,
+            valorUnitario : producInfo.valorUnitario,
+            cantidad : pedido.cantidad,
+            total : producInfo.valorUnitario*pedido.cantidad
+        }
+        return proudctJson;
+
+    },
     getDetailPedido : async (userId) => {
         const pedidoDetail = await pedidos.findAll();
         const pedidoInfo = [];
@@ -70,11 +93,19 @@ const asesorController = {
                 }else {
                     estado = "Sin pagar"
                 }
+                const detailProductos = await asesorController.getDetailProducto(pedidoDetail[i].id,pedidoDetail[i].cliente_id);
                 pedidoInfo.push({
                     idPedido : pedidoDetail[i].id,
                     fechaPago : pedidoDetail[i].fechaPago,
                     estado : estado,
-                    cantidad : pedidoDetail[i].cantidad
+                    
+                    productos : 
+                    [
+                        {
+                            detailProductos,
+                        }
+                    ] 
+
                 })
             }   
             

@@ -9,7 +9,7 @@ module.exports = (Sequelize, dataTypes) => {
         pedido_id: {
             type: dataTypes.BIGINT(10)
         },
-        Producto_id: {
+        producto_id: {
             type: dataTypes.BIGINT(10)
         }
     }
