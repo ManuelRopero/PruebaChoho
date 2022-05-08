@@ -5,6 +5,7 @@ const cliente = db.Cliente;
 const products = db.Producto;
 const pedidos = db.Pedido;
 const pedidoProducto = db.Pedido_Producto;
+//const fetch = require('node-fetch')
 const asesorController = {
     getAllasesors: async (req,res) => {
         const allAsesor = await asesor.findAll();
