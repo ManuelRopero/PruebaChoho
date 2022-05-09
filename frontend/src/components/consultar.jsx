@@ -64,6 +64,53 @@ class consultas extends Component {
                                             <th>Total Pedidos :</th>
                                             <th>{this.state.detailAsesor.totalPeidos}</th>
                                         </tr>
+                            
+                                    </thead>
+                                </table>
+                                <div className="text-center">
+                                    <h2>Usuarios asignados</h2>
+                                </div>
+                                <table border="1" className="table">
+                                    <thead> 
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Nombre Usuario</th>
+                                        <th>Cantidad de productos</th>
+                                        <th>Productos comprados</th>
+                                    </tr>
+                                        {
+                                            this.state.detailAsesor.clientes.map(element => (
+                                                <tr>
+                                                    <th>{element.idCliente}</th>
+                                                    <th>{element.name}</th>
+                                                    <th>{element.totalPedidos}</th>
+                                                    <table border="1" className="table">
+                                                    <tr>
+                                                        <th>Producto</th>
+                                                        <th>Precio</th>
+                                                        <th>Cantidad</th>
+                                                        <th>total</th>
+                                                    </tr>
+                                                    {
+                                                        element.detallePedido.map(element => (
+                                                            
+                                                                element.productos.map(element => (
+                                                                    <tr>
+                                                                            
+                                                                            <th>{element.detailProductos.nameProduct}</th>
+                                                                            <th>  ${element.detailProductos.valorUnitario}</th>
+                                                                            <th>{element.detailProductos.cantidad}</th>
+                                                                            <th>{element.detailProductos.total}</th>
+                                                                    </tr>
+                                                                        ))
+                                                            ))
+                                                            
+                                                    }
+                                                    </table>
+
+                                                </tr>
+                                            ))
+                                        }
                                     </thead>
                                 </table>
                             </div>
@@ -86,7 +133,6 @@ class consultas extends Component {
                                             <th><button type="button" className="btn btn-dark" onClick={()=> this.traerAsesorInfo(element.id) }>Consultar</button></th>
                                         </tr>
                                     ))
-
                                 }
                             </thead>
                         </table>
