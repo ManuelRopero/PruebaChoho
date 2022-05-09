@@ -80,6 +80,7 @@ const asesorController = {
             cantidad : pedido.cantidad,
             total : producInfo.valorUnitario*pedido.cantidad
         }
+        console.log("ProductoDetail",proudctJson);
         return proudctJson;
 
     },
@@ -111,6 +112,7 @@ const asesorController = {
             }   
             
         }
+        console.log("Pedido info", pedidoInfo);
         return pedidoInfo;
 
     },
@@ -156,7 +158,9 @@ const asesorController = {
             clientesAsignados : totalUsersAsing,
             totalPeidos : totalPedidos,
             clientes : clients
-        } 
+        }
+        console.log("Asesors id:");
+        console.log(AsesorJson.clientes);
         res.json(AsesorJson);
     }
 }
